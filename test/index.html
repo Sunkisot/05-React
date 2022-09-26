@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id='root'></div>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- <script src="./index.js"></script> -->
+  <script>
+    const e = React.createElement;
+    class TimeCheck extends React.Component {
+      constructor() {
+        super();
+        this.state = {};
+      }
+      render() {
+        return e(
+          'div', {
+            
+          },
+          [
+            e('h1', {},'Hello, world'),
+            e('h2', {},'It is' + new Date().toLocaleTimeString())
+          ]
+        );
+      }
+    }
+    function tick() {
+      ReactDOM.render(e(TimeCheck, {id : 1}), document.getElementById('root'));
+    }
+    setInterval(tick, 1000);
+  </script>
+</body>
+
+</html>
